@@ -129,6 +129,20 @@ h2{font-size:clamp(32px,4.4vw,48px);margin:0;line-height:1.2;letter-spacing:.04e
 .contact .script{color:var(--blush);font-size:34px}
 .contact p{max-width:46ch;margin:16px auto 30px;color:#f6dfe2}
 .contact .btn{background:#fff;color:var(--wine)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;margin-top:48px;align-items:start}
+.contact-card{background:#fffaf4;border:var(--line);border-radius:var(--r);padding:32px 34px;box-shadow:6px 6px 0 var(--ink)}
+.contact-card h3{margin:0 0 6px;font-size:26px}
+.contact-card .co{margin:0 0 20px;color:var(--ink-soft);font-size:18px}
+.contact-links{display:grid;gap:14px}
+.contact-links a{display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:18px;padding:14px 20px;border:var(--line);border-radius:999px;background:#fff;box-shadow:3px 3px 0 var(--ink)}
+.contact-links a span{font-size:15px;color:var(--ink-soft);font-weight:400}
+.contact-links a:hover{background:var(--blush)}
+.book-form{display:grid;gap:10px}
+.book-form label{font-size:18px;font-weight:700;margin-top:6px}
+.book-form input,.book-form textarea{font:inherit;font-size:18px;padding:12px 14px;border:2px solid var(--ink);border-radius:12px;background:#fff;color:var(--ink);width:100%}
+.book-form input:focus,.book-form textarea:focus{outline:3px dashed var(--rose);outline-offset:2px}
+.book-form button{justify-self:start;margin-top:12px;cursor:pointer;font-family:inherit}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
 footer{text-align:center;padding:40px 0 60px;font-size:15px;color:var(--ink-soft)}
 
 /* petals */
@@ -241,9 +255,34 @@ footer{text-align:center;padding:40px 0 60px;font-size:15px;color:var(--ink-soft
     <p class="script">to be continued…</p>
     <h2>下一話，由你和綉美一起寫</h2>
     <p>不論是正在辦理理賠，或只是想把家裡的保單看清楚，都歡迎來聊聊。</p>
-    <a class="btn" href="#contact">預約理賠諮詢</a>
+    <a class="btn" href="#book">預約理賠諮詢</a>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>聯絡綉美</h3>
+      <p class="co">方碩方顧問有限公司</p>
+      <div class="contact-links">
+        <a href="https://www.fsf.com.tw/" target="_blank" rel="noopener">公司網站 <span>fsf.com.tw</span></a>
+        <a href="https://line.me/R/ti/p/@562hjdjz" target="_blank" rel="noopener">公司 LINE <span>@562hjdjz</span></a>
+        <a href="https://line.me/ti/p/aYDPnfRMc3" target="_blank" rel="noopener">綉美個人 LINE <span>加好友聊聊</span></a>
+      </div>
+    </div>
+    <div class="contact-card" id="book">
+      <h3>預約理賠諮詢</h3>
+      <p class="co">留下聯絡方式與想聊的事，綉美會盡快與您確認時間。</p>
+      <form class="book-form" data-works-form="xiumei" data-success="謝謝您，預約諮詢已送出，綉美會盡快與您聯絡" novalidate>
+        <label for="bk-name">姓名</label>
+        <input id="bk-name" name="name" autocomplete="name" required placeholder="例：王小明">
+        <label for="bk-phone">電話或 Email</label>
+        <input id="bk-phone" name="phone" autocomplete="tel" required placeholder="綉美用來與您確認時間">
+        <label for="bk-msg">想諮詢的內容（選填）</label>
+        <textarea id="bk-msg" name="message" rows="4" placeholder="例：車禍後想了解理賠流程、想看懂家裡的保單"></textarea>
+        <button class="btn" type="submit">送出預約諮詢</button>
+      </form>
+    </div>
   </div>
 </div></section>
+<script src="/static/works-form.js" defer></script>
 </main>
 
 <footer>© 鄭綉美・保險理賠顧問　｜　手繪漫畫風個人介紹頁</footer>
